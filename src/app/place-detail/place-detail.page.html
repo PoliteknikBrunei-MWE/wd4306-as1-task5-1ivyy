@@ -1,0 +1,65 @@
+<ion-content [fullscreen]="true">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="primary">
+        <ion-button fill="outline">
+          Edit
+          <ion-icon slot="end" name="create"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-modal [isOpen]="isEditModel">
+        <ng-template>
+          <ion-header>
+            <ion-toolbar>
+              <ion-title>Modal</ion-title>
+              <ion-buttons slot="end">
+                <ion-button (click)="setOpen(false)">Close</ion-button>
+              </ion-buttons>
+            </ion-toolbar>
+          </ion-header>
+          <ion-content class="ion-padding">
+            <p>Edit Modal</p>
+          </ion-content>
+        </ng-template>
+      </ion-modal>
+    </ion-toolbar>
+  </ion-header>
+  <ion-card>
+    <img
+      alt="Silhouette of mountains"
+      src="https://res.cloudinary.com/jnto/image/upload/w_750,h_503,fl_lossy,f_auto/v1531981666/fujiguide/SG010_6"
+    />
+  </ion-card>
+  <!--  -->
+  <ion-text class="ion-text-center">
+    <h3>Mount FujiBoi</h3>
+  </ion-text>
+  <!--  -->
+  <ion-button expand="block" (click)="setOpen(true)">Book</ion-button>
+  <ion-modal [isOpen]="isBookModel">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Modal</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="setOpen(false)">Close</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <p>Booking</p>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+</ion-content>
+<br />
+<ion-footer>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button tab="home"> Places </ion-tab-button>
+        <ion-tab-button tab="radio"> Offers </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
+</ion-footer>
